@@ -1,0 +1,522 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: NaSalinha QA
+meta:
+  id: wrk_98e6007d59584f0896869ab550b8604d
+  created: 1778276596695
+  modified: 1778276648881
+  description: ""
+collection:
+  - name: Autenticação
+    meta:
+      id: fld_880998705128422ba88fcc58e530c998
+      created: 1778277328705
+      modified: 1778277366821
+      sortKey: -1778277361656
+      description: ""
+    children:
+      - url: http://localhost:5001/api/auth/login
+        name: "[CT-04] Login Admin - POST /auth/login"
+        meta:
+          id: req_68c10d99f3564100924f2d0d269a0fde
+          created: 1778276596752
+          modified: 1778295348560
+          isPrivate: false
+          description: ""
+          sortKey: -1778277365078
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "admin@nasalinha.com",
+              "password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyNzY3MDEsImV4cCI6MTc3ODI4MDMwMX0.iGRNuA5QfcVabo4SuGqSoZlMUnofpJJhASKUjaqnatY
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/auth/register
+        name: "[CT-02] Cadastro e-mail duplicado - POST /auth/register"
+        meta:
+          id: req_0b1719b09f38405f9c9366e8fd5ceaf9
+          created: 1778277462855
+          modified: 1778279117226
+          isPrivate: false
+          description: ""
+          sortKey: -1778277462855
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Teste",
+              "email": "lucas@example.com",
+              "password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/auth/login
+        name: "[CT-05] Login Lucas (MEMBER) - POST /auth/login"
+        meta:
+          id: req_551fdec6c4b24e8d9316dea32ae14a2a
+          created: 1778279017538
+          modified: 1778297703401
+          isPrivate: false
+          description: ""
+          sortKey: -1778279017538
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "email": "lucas@example.com",
+              "password": "senha123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/seasons
+        name: "[CT-05] Acesso rota admin como MEMBER - GET /seasons"
+        meta:
+          id: req_dd73cecc1dac4a18a927a6bdce968e7c
+          created: 1778279161195
+          modified: 1778294329548
+          isPrivate: false
+          description: ""
+          sortKey: -1778279161195
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/seasons
+        name: "[CT-06] Acesso rota admin como ADMIN - GET /seasons"
+        meta:
+          id: req_cbc9705e3b414c44803f6cdc355e61db
+          created: 1778279457285
+          modified: 1778294324723
+          isPrivate: false
+          description: ""
+          sortKey: -1778279457285
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Check-in
+    meta:
+      id: fld_aa010639e11a42acbbaac9cc38fca309
+      created: 1778277339653
+      modified: 1778294876623
+      sortKey: -1778277361606
+      description: ""
+    children:
+      - url: http://localhost:5001/api/checkins
+        name: "[CT-11] Listar check-ins - GET /checkins"
+        meta:
+          id: req_f0b6daa2f50149f5957be6fa7a3c7bdd
+          created: 1778287299945
+          modified: 1778294322441
+          isPrivate: false
+          description: ""
+          sortKey: -1778287299945
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/checkins/0193dfe4-78a9-4286-bcf6-2c66683e91fc
+        name: "[CT-11] Membro aprova check-in - PUT /checkins/:id"
+        meta:
+          id: req_eddb438be1774d00b301704331e87dec
+          created: 1778287482066
+          modified: 1778294313434
+          isPrivate: false
+          description: ""
+          sortKey: -1778287482066
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "status": "APPROVED"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/checkins
+        name: "[CT-12] Tentar criar check-in PENDENTE - POST /checkins"
+        meta:
+          id: req_978e4d9a875949f29b053d5c2d0b3631
+          created: 1778288088992
+          modified: 1778294304185
+          isPrivate: false
+          description: ""
+          sortKey: -1778288088992
+        method: POST
+        body:
+          mimeType: application/octet-stream
+          fileName: C:\Users\julia\OneDrive\Imagens\Capturas de tela\Captura de tela
+            2025-08-10 230624.png
+        headers:
+          - name: Content-Type
+            value: application/octet-stream
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/checkins/6e515c3f-f86c-4635-99cb-729f3b059d5c
+        name: "[CT-13] Membro acessa check-in de outro - GET /checkins/:id"
+        meta:
+          id: req_f7ddef3d7f4b4946ac9d1df23e8d3131
+          created: 1778294679012
+          modified: 1778294714746
+          isPrivate: false
+          description: ""
+          sortKey: -1778294679012
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/checkins/0193dfe4-78a9-4286-bcf6-2c66683e91fc
+        name: "[CT-14] Usuário acessa próprio check-in - GET /checkins/:id"
+        meta:
+          id: req_cff4fdaedf124f94942dc400db82068f
+          created: 1778294875387
+          modified: 1778294898044
+          isPrivate: false
+          description: ""
+          sortKey: -1778294875387
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTQyOTUsImV4cCI6MTc3ODI5Nzg5NX0.25jZxgCRIzW4ogsZKE7FXXJLHzFXVcJugih-psRXIto
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Pontuação e Ranking
+    meta:
+      id: fld_f06626cdece1450abb976f3f993a9538
+      created: 1778277361556
+      modified: 1778277361556
+      sortKey: -1778277361556
+      description: ""
+    children:
+      - url: http://localhost:5001/api/rankings
+        name: "[CT-16] Consultar ranking - GET /rankings"
+        meta:
+          id: req_b59648c0e50147e9a9ca1ad2545ff953
+          created: 1778295128145
+          modified: 1778295167056
+          isPrivate: false
+          description: ""
+          sortKey: -1778295128145
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyOTUxNTgsImV4cCI6MTc3ODI5ODc1OH0.GRoGT8YSR-sfLzyt7Zq0WbHFX_CoGmKbUIJBrJ9wUQs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/checkins/0193dfe4-78a9-4286-bcf6-2c66683e91fc
+        name: "[CT-17] Deletar check-in - DELETE /checkins/:id"
+        meta:
+          id: req_8b77b97ba189401b90ae1798d30d4fd1
+          created: 1778295322267
+          modified: 1778295354282
+          isPrivate: false
+          description: ""
+          sortKey: -1778295322267
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyOTUxNTgsImV4cCI6MTc3ODI5ODc1OH0.GRoGT8YSR-sfLzyt7Zq0WbHFX_CoGmKbUIJBrJ9wUQs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Temporadas
+    meta:
+      id: fld_167536237bd34c908ce2d9887fb52a31
+      created: 1778297251973
+      modified: 1778297251973
+      sortKey: -1778297251973
+      description: ""
+    children:
+      - url: http://localhost:5001/api/seasons
+        name: "[CT-20] Criar temporada body vazio - POST /seasons"
+        meta:
+          id: req_8b379db3744a4b43bcd798ee6ed171dd
+          created: 1778297258502
+          modified: 1778297306201
+          isPrivate: false
+          description: ""
+          sortKey: -1778297258502
+        method: POST
+        body:
+          mimeType: application/json
+          text: "{}"
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyOTUxNTgsImV4cCI6MTc3ODI5ODc1OH0.GRoGT8YSR-sfLzyt7Zq0WbHFX_CoGmKbUIJBrJ9wUQs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/seasons
+        name: "[CT-21] Listar temporadas - GET /seasons"
+        meta:
+          id: req_60ed7a8ae7064efaa51514df3bedcdd2
+          created: 1778297436273
+          modified: 1778297466209
+          isPrivate: false
+          description: ""
+          sortKey: -1778297436273
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyOTUxNTgsImV4cCI6MTc3ODI5ODc1OH0.GRoGT8YSR-sfLzyt7Zq0WbHFX_CoGmKbUIJBrJ9wUQs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/seasons
+        name: "[CT-23] Membro cria temporada - POST /seasons"
+        meta:
+          id: req_4c8a9e636eea47f3b25c17cdd5862c6c
+          created: 1778297657338
+          modified: 1778297725551
+          isPrivate: false
+          description: ""
+          sortKey: -1778297657338
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Temporada Teste",
+              "startDate": "2026-01-01",
+              "endDate": "2026-06-30",
+              "pointsPerCheckIn": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNmYzNWQ0MS1iYWUwLTRmNjMtYTA1My1mNmE0NzNiNzYzODQiLCJpYXQiOjE3NzgyOTc3MTksImV4cCI6MTc3ODMwMTMxOX0.SJ-1yZdDC9Dofo_pAE2oKKFd3R2uk-fu0zY-YcSvwQI
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:5001/api/seasons/0514b9ea-d9ed-434e-8a7f-13d3a8d40e5a
+        name: "[CT-24] Deletar temporada - DELETE /seasons/:id"
+        meta:
+          id: req_e05220ed270a495381e1576699335730
+          created: 1778297775635
+          modified: 1778297794715
+          isPrivate: false
+          description: ""
+          sortKey: -1778297775635
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwYmY0NjM5YS02YjIzLTRlZjYtYTZlOS0wODY5ZjhjODg3MTAiLCJpYXQiOjE3NzgyOTUxNTgsImV4cCI6MTc3ODI5ODc1OH0.GRoGT8YSR-sfLzyt7Zq0WbHFX_CoGmKbUIJBrJ9wUQs
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_53c82e563bb60775253ddbb6e89395ed3155fc8a
+    created: 1778276596699
+    modified: 1778276596699
+environments:
+  name: Base Environment
+  meta:
+    id: env_53c82e563bb60775253ddbb6e89395ed3155fc8a
+    created: 1778276596698
+    modified: 1778276596698
+    isPrivate: false
