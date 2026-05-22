@@ -31,6 +31,13 @@ e os pontos são refletidos em um ranking geral por temporada.
 
 ---
 
+## Navegação rápida
+
+- [Kanban de testes](https://github.com/users/jotaGoulart/projects/3)
+- [Issues (casos de teste e bug reports)](https://github.com/jotaGoulart/nasalinha-qa/issues)
+
+---
+
 ## Estrutura do repositório
 
 - `docs/relatorio-final.md` - relatório final com métricas e resultados
