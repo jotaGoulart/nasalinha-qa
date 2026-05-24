@@ -7,7 +7,7 @@ acumulam pontos e sobem no ranking.
 ---
 
 ## Sobre o projeto auditado
-
+ 
 O NaSalinha é uma aplicação web onde membros realizam check-ins diários 
 com fotos como prova de presença. Administradores aprovam os check-ins 
 e os pontos são refletidos em um ranking geral por temporada.
