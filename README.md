@@ -1,4 +1,4 @@
-# NaSalinha QA — Auditoria de Qualidade
+# NaSalinha QA - Auditoria de Qualidade
 
 Documentação da auditoria de qualidade realizada no projeto NaSalinha, 
 um sistema de check-in gamificado onde membros fazem upload de fotos, 
